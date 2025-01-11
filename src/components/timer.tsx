@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Clock, Pause, Play } from "lucide-react";
 
 const Timer = () => {
@@ -48,9 +48,9 @@ const Timer = () => {
   };
 
   return (
-    <div className="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-lg space-y-4">
+    <div className="max-w-sm p-6 mx-auto space-y-4 bg-white shadow-lg rounded-xl">
       <div className="flex items-center space-x-4">
-        <Clock className="h-12 w-12 text-blue-500" />
+        <Clock className="w-12 h-12 text-blue-500" />
         <div className="text-xl font-semibold text-gray-900">
           {formatTime(seconds)}
         </div>
@@ -59,23 +59,23 @@ const Timer = () => {
       <div className="flex space-x-4">
         <button
           onClick={handleStartStop}
-          className="flex-1 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors flex items-center justify-center space-x-2"
+          className="flex items-center justify-center flex-1 px-4 py-2 space-x-2 text-white transition-colors bg-blue-500 rounded hover:bg-blue-600"
         >
           {isRunning ? (
             <>
-              <Pause className="h-4 w-4" />
+              <Pause className="w-4 h-4" />
               <span>Pause</span>
             </>
           ) : (
             <>
-              <Play className="h-4 w-4" />
+              <Play className="w-4 h-4" />
               <span>Start</span>
             </>
           )}
         </button>
         <button
           onClick={handleReset}
-          className="flex-1 px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600 transition-colors"
+          className="flex-1 px-4 py-2 text-white transition-colors bg-gray-500 rounded hover:bg-gray-600"
         >
           Reset
         </button>
