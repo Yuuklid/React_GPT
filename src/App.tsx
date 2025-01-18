@@ -1,17 +1,15 @@
 import React from "react";
-import GPT from "./components/chatgpt";
-import Timer from "./components/timer";
+import ChatInterface from "./components/chatgpt";
+import "./App.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import SpinnerTest from "./components/spinner";
 
 const App: React.FC = () => {
   return (
     <>
-    <div>
-      <h1 style={{ textAlign: "center" }}>ChatGPT Interface</h1>
-      <GPT />
-    </div>
-    <div>
-      <Timer />
-    </div>
+      <div className="container">
+        <ChatInterface className="chat-component" />
+      </div>
     </>
   );
 };
