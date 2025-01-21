@@ -3,6 +3,7 @@ import React from "react";
 import OpenAI from "openai";
 import "./ChatInterface.css";
 
+
 interface Message {
   role: "user" | "assistant" | "system";
   content: string;
@@ -49,7 +50,7 @@ const ChatInterface = ({ className }: { className?: string }) => {
     const systemMessage: Message = {
       role: "system",
       content:
-        "You are a solemn assistant. You will answer this question related to the manga Beserk. Please act cold, and give your honest opinion. Make it short but effective.",
+        "You are a very simple assistant. You only respond in 2 or 3 sentences. But they are short and to the point. ",
       id: crypto.randomUUID(),
     };
 
@@ -71,7 +72,7 @@ const ChatInterface = ({ className }: { className?: string }) => {
                 message.role == "user" ? "user-message" : "assistant-message"
               }`}
             >
-              <div className="message-bubble">{message.content}</div>
+              <div className="message-bubble text-black">{message.content}</div>
             </div>
           ))}
         </div>
@@ -79,7 +80,7 @@ const ChatInterface = ({ className }: { className?: string }) => {
         <div>
           <form>
             <input
-              className="input-box"
+              className="input-box dark:text-white dark:bg-black text-black bg-white"
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
